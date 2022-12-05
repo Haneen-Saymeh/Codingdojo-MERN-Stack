@@ -9,6 +9,7 @@ var hello = 'world';
 var needle = 'haystack';
 test();
 function test(){
+   
     var needle = 'magnet';
     console.log(needle);
 }
@@ -34,6 +35,7 @@ function eat(){
     food = 'half-chicken';
     console.log(food);
     var food = 'gone';
+
 }
 
 // prediction:
