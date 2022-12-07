@@ -15,7 +15,7 @@ class BirthdayCard extends Component{
 
     render(){
         return (
-<div>
+<div  className='main' >
     <h1>{this.props.firstname} {this.props.lastname}</h1>
     <p>{this.state.counter}</p>
     <p>{this.props.hair}</p>
