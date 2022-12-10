@@ -7,6 +7,8 @@ const UserForm = () => {
     const [password, setPassword] = useState("");
     const [confirm, setConfirm] = useState("");
 
+
+
 const formfun= (e) =>{
     e.preventDefault();
     const user = {fname, lname,email,password,confirm};
