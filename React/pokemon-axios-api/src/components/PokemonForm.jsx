@@ -11,20 +11,19 @@ const PokemonForm = () => {
 
   useEffect(()=>{
     axios.get('https://pokeapi.co/api/v2/pokemon')
-    .then(response=>setPokemon(response.results))
+    .then(response=>{setPokemon(response.data.results)})
     
   }, [clicked])
   
   return ( 
-    <div>
-      <button  onClick={handleClick} >Fetch Pokemon</button>
-      {
+    <div  style={{marginLeft:"39%", marginTop:"3%"}}>
+      <button  onClick={handleClick} style={{backgroundColor:"red", color:"white",width:"150px", height:"30px"}}>Fetch Pokemon</button>
+{
       
-      clicked && pokemon.map((pok,id)=> {  return (<p key={id}>{pok.name}</p>)
- 
-         })}
-         
-    </div>
+      clicked && pokemon.map((pok,id)=> { return (<p key={id}>{pok.name}</p>)})
+  } 
+
+ </div>
   )
 }
 

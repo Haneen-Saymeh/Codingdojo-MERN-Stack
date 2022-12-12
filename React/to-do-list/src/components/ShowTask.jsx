@@ -12,7 +12,7 @@ const ShowTask = (props) => {
   return (
     <div style={{marginLeft:"37%", marginTop:"3%"}} >
         <ul>
-            {props.data.map((item,idx)=> { return <div key={idx}><li >{item}</li><button onClick={(idx)=>handleClick(idx)}>Delete</button></div>
+            {props.data.map((item,idx)=> { return <div key={idx}><li >{item}</li><button onClick={handleClick(idx)}>Delete</button></div>
 })}
       </ul>
     </div>
