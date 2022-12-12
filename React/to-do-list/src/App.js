@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
+import AddTask from './components/AddTask';
+import ShowTask from './components/ShowTask';
 
 function App() {
+  const [work, setWork] = useState([]);
+const func= (z)=>{
+  setWork(work.concat(z));
+}
+
+const removethem=(i) =>{
+  setWork([...work.slice(0,i), ...work.slice(i+1)]);
+
+}
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     <AddTask  myfun={func}  />
+     <ShowTask  data={work} removetasks={removethem} />
     </div>
   );
 }
