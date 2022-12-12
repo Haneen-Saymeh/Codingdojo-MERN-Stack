@@ -12,6 +12,7 @@ const func= (z)=>{
 
 const removethem=(i) =>{
   setWork([...work.slice(0,i), ...work.slice(i+1)]);
+  return setWork;
 
 }
   
