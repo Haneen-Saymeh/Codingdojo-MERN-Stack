@@ -2,6 +2,7 @@
 import './App.css';
 import {Router} from '@reach/router';
 import Main from './views/Main';
+import Detail from './views/Detail';
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <div>
      <Router>
     <Main path="/products" />
+    <Detail  path="/products/:id"/>
       </Router>
              
          

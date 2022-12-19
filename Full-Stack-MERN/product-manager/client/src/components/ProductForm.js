@@ -20,7 +20,7 @@ export default () => {
     }
     //onChange to update firstName and lastName
     return (
-        <form onSubmit={onSubmitHandler}>
+        <form onSubmit={onSubmitHandler}  style={{marginLeft:"39%", marginTop:"3%"}}>
             <p>
                 <label>Title</label><br/>
                 <input type="text" onChange={(e)=>setTitle(e.target.value)} value={title}/>
