@@ -14,7 +14,7 @@ const Main = (props) => {
                 setLoaded(true);
             })
             .catch(err => console.error(err));
-    },[products]);
+    },[]);
 
     const removeFromDom = productId => {
         setProducts(products.filter(product => product._id != productId));
