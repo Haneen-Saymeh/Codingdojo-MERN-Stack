@@ -12,7 +12,7 @@ const server = app.listen(8000, () =>
 const io = require('socket.io')(server, { cors: true });
 io.on("connection", socket=>{
   socket.on("start", data=>socket.emit("start", "Welcome to the Chat"));
-  socket.on("join", data=>socket.broadcast.emit("join", "joined the chat"));
+  socket.on("start", data=>socket.broadcast.emit("join", "joined the chat"));
   
   
     socket.on("chat", data=>io.emit("chat", data));
