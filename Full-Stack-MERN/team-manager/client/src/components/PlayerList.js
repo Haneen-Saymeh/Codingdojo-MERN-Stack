@@ -24,15 +24,17 @@ const PlayerList = () => {
 
 
   return (
-    <div>
+    <div style={{marginLeft:"37%", marginTop:"3%"}}>
         <Link to={"/players/addplayer" } >Add new Player</Link>
-      <table>
+      <table class="table" >
+        <thead class="thead-dark">
   <tr>
     <th>name</th>
     <th>Position</th>
     <th>Actions</th>
     
   </tr>
+  </thead>
 {
    loaded && players.map((player,i)=> 
   <tr key={i}>

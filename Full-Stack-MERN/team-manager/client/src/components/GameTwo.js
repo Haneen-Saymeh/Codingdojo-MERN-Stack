@@ -2,13 +2,13 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import GameStatus from './GameStatus';
 
-const GameOne = () => {
+const GameTwo = () => {
 
 
         const [players, setPlayers] = useState([]);
         const [player, setPlayer] = useState("");
         const [loaded, setLoaded] = useState(false);
-        const  [game1, setGame1] = useState("");
+        const  [game2, setGame1] = useState("");
         const [name, setName] = useState("");
     const [position, setPosition] = useState("");
     
@@ -30,7 +30,7 @@ const GameOne = () => {
         axios.put('http://localhost:8000/api/players/' + i, {
           
            
-            game1: "playing",
+            game2: "playing",
             
         })
             .then(res => console.log(res))
@@ -42,7 +42,7 @@ const GameOne = () => {
       axios.put('http://localhost:8000/api/players/' + i, {
         
          
-          game1: "not playing",
+          game2: "not playing",
           
       })
           .then(res => console.log(res))
@@ -54,7 +54,7 @@ const GameOne = () => {
     axios.put('http://localhost:8000/api/players/' + i, {
       
         
-        game1: "undecided",
+        game2: "undecided",
         
     })
         .then(res => console.log(res))
@@ -66,46 +66,46 @@ const GameOne = () => {
 
 
 
-  return (
-    <div  style={{marginLeft:"37%", marginTop:"3%"}} >
-      <GameStatus/>
+return (
+  <div  style={{marginLeft:"37%", marginTop:"3%"}} >
+    <GameStatus/>
 
 <table class="table"  style={{width:"500px"}}>
-  <thead class="thead-dark">
-  <tr>
-    <th scope="col">name</th>
-    
-    <th scope="col">Actions</th>
-    
-  </tr>
-  </thead>
-  <tbody>
+<thead class="thead-dark">
+<tr>
+  <th scope="col">name</th>
   
-{
-   loaded && players.map((player,idx)=> 
-  <tr key={idx}>
-    <td>{player.name}</td>
-    
-    <td>
+  <th scope="col">Actions</th>
+  
+</tr>
+</thead>
+<tbody>
 
-      <button type="button" class="btn btn-primary" onClick={(e)=>handle1(player._id)} style={{backgroundColor:player.game1=="playing"?"green" :""}}>Playing</button>
-      <span>    </span>
-      <button type="button" class="btn btn-primary" onClick={(e)=>handle2(player._id)}  style={{backgroundColor:player.game1=="not playing"?"red" :""}}>Not playing</button>
-      <span>    </span>
-      <button type="button" class="btn btn-primary" onClick={(e)=>handle3(player._id)}  style={{backgroundColor:player.game1=="undecided"?"yellow" :""}}  >Undecided</button>
-      
-      
-     </td>
-   
-  </tr>
+{
+ loaded && players.map((player,idx)=> 
+<tr key={idx}>
+  <td>{player.name}</td>
+  
+  <td>
+
+    <button type="button" class="btn btn-primary" onClick={(e)=>handle1(player._id)} style={{backgroundColor:player.game2=="playing"?"green" :""}}>Playing</button>
+    <span>    </span>
+    <button type="button" class="btn btn-primary" onClick={(e)=>handle2(player._id)}  style={{backgroundColor:player.game2=="not playing"?"red" :""}}>Not playing</button>
+    <span>    </span>
+    <button type="button" class="btn btn-primary" onClick={(e)=>handle3(player._id)}  style={{backgroundColor:player.game2=="undecided"?"yellow" :""}}  >Undecided</button>
+    
+    
+   </td>
+ 
+</tr>
 )}
 
 </tbody>
- 
+
 </table>
-      
-    </div>
-  )
+    
+  </div>
+)
 }
 
-export default GameOne
+export default GameTwo

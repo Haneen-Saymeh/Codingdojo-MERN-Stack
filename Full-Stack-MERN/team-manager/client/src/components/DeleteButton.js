@@ -17,7 +17,7 @@ export default props => {
 }
     
     return (
-        <button onClick={deletePlayer}>
+        <button type="button" class="btn btn-danger" onClick={deletePlayer}>
             Delete
         </button>
     )
