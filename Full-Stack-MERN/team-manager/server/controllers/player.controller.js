@@ -15,7 +15,7 @@ module.exports.createPlayer = (request, response) => {
 
 
 module.exports.getAllPlayers = (request, response) => {
-    Player.find({})
+    Player.find().sort({name:'asc'})
         .then(players => response.json(players))
         .catch(err => response.json(err))
 }
